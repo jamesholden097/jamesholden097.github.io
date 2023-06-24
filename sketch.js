@@ -1,5 +1,3 @@
-// Daniel Shiffman
-// https://thecodingtrain.com/CodingChallenges/074-clock.html
 
 function setup() {
   createCanvas(displayWidth, displayHeight);
@@ -8,7 +6,7 @@ function setup() {
 
 function draw() {
   background(0);
-  translate(200, 200);
+  translate(displayWidth/2, displayHeight/2);
   rotate(-90);
 
   let hr = hour();
