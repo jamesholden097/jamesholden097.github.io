@@ -1,4 +1,3 @@
-
 function setup() {
   createCanvas(displayWidth, displayHeight);
   angleMode(DEGREES);
@@ -7,13 +6,12 @@ function setup() {
 function draw() {
   background(0);
   translate(displayWidth/2, displayHeight/2);
-  
   rotate(-90);
 
   let hr = hour();
   let mn = minute();
   let sc = second();
-
+  let ampm = '';
   strokeWeight(8);
   stroke(255, 100, 150);
   noFill();
@@ -49,10 +47,16 @@ function draw() {
   stroke(255);
   point(0, 0);
 
+  rotate(90);
 
   fill(255);
   noStroke();
-  text(hr + ':' + mn + ':' + sc, 10, 200);
+   ampm = hr> 12 ? ' PM' : ' AM'
+   hr = hr<10? '0' + hr : hr
+   mn = mn<10? '0' + mn : mn
+   textSize(32);
+   textAlign(CENTER,CENTER);
+  text(hr + ':' + mn + ':' + sc + ampm, -15, displayHeight/ 4);
 
 
 }
